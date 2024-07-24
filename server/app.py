@@ -85,12 +85,12 @@ class MemberOnlyArticle(Resource):
             return article.to_dict(), 200
         return {'message': 'Article not found'}, 404
 
-api.add_resource(ClearSession, '/clear')
-api.add_resource(IndexArticle, '/articles')
-api.add_resource(ShowArticle, '/articles/<int:id>')
-api.add_resource(Login, '/login')
-api.add_resource(Logout, '/logout')
-api.add_resource(CheckSession, '/check_session')
+api.add_resource(ClearSession, '/clear', endpoint = "clear")
+api.add_resource(IndexArticle, '/articles', endpoint = "article_list")
+api.add_resource(ShowArticle, '/articles/<int:id>', endpoint = "show_article")
+api.add_resource(Login, '/login', endpoint = "login")
+api.add_resource(Logout, '/logout', endpoint = "logout")
+api.add_resource(CheckSession, '/check_session', endpoint = "check_session")
 api.add_resource(MemberOnlyIndex, '/members_only_articles', endpoint = "member_index")
 api.add_resource(MemberOnlyArticle, '/members_only_articles/<int:id>', endpoint = "member_article")
 
