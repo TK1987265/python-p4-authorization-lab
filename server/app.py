@@ -91,8 +91,8 @@ api.add_resource(ShowArticle, '/articles/<int:id>')
 api.add_resource(Login, '/login')
 api.add_resource(Logout, '/logout')
 api.add_resource(CheckSession, '/check_session')
-api.add_resource(MemberOnlyIndex, '/members_only_articles')
-api.add_resource(MemberOnlyArticle, '/members_only_articles/<int:id>')
+api.add_resource(MemberOnlyIndex, '/members_only_articles', endpoint = "member_index")
+api.add_resource(MemberOnlyArticle, '/members_only_articles/<int:id>', endpoint = "member_article")
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
